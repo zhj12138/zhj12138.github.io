@@ -7,13 +7,15 @@
 
     
 
-    <title>categories | </title>
+    <title>C语言易错点 | </title>
     <meta name="author" content="snow zhao">
+    
+    <meta name="description" content="C语言易错点1.sizeof是关键字而非函数。     2.定义变量时，不能同时对多个变量连续赋初始值。        eg：int m=n=1；//错误     3.scanf语句：       “%c”将读入空白符，”  %c”能忽略空白符。        “%s”遇到空白符读入结束。     ">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="categories"/>
+    <meta property="og:title" content="C语言易错点"/>
     <meta property="og:site_name" content="Snow Zhao&#39;s Blog"/>
 
     
@@ -180,6 +182,10 @@
         <span class="breadcrumb">Current page(Categories)</span>
         
             
+    
+    
+    <a class="breadcrumb" href="/categories/notes/">notes</a>
+
 
         
 
@@ -195,12 +201,12 @@
             <div class="article-title">
                 
     
-        <h1>categories</h1>
+        <h1>C语言易错点</h1>
     
 
 
             </div>
-            <time class="pink-link-context" datetime="2020-06-05T15:41:54.000Z"><a href="/categories/index.html">2020-06-05</a></time>
+            <time class="pink-link-context" datetime="2020-06-05T23:56:20.000Z"><a href="/2020/06/06/C%E8%AF%AD%E8%A8%80%E6%98%93%E9%94%99%E7%82%B9/">2020-06-06</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -208,16 +214,33 @@
 </span>
 
             
+    <div class="tags-row">
+        
+            <a href="/tags/C/" class="chip pink lighten-1">C</a>
+        
+    </div>
+
 
             <div class="toc pink-link-context hide-on-med-and-down">
-    
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#C语言易错点"><span class="section table-of-contents-text">C语言易错点</span></a></li></ol>
 </div>
 
 
             <div class="entry pink-link-context">
-                
+                <h1 id="C语言易错点"><a href="#C语言易错点" class="headerlink" title="C语言易错点"></a>C语言易错点</h1><p>1.sizeof是关键字而非函数。<br>     2.定义变量时，不能同时对多个变量连续赋初始值。<br>        eg：int m=n=1；//错误<br>     3.scanf语句：<br>       “%c”将读入空白符，”  %c”能忽略空白符。<br>        “%s”遇到空白符读入结束。<br>        ps：要想将有空格的字符串存入char型数组中，可使用gets(str) 或fgets(str,size,stdin)从标准输入设备中读入。但不建议使 用危险的gets(str),因为它无法限制输入字符串的长度，容易导致缓冲区溢出。两者的读入有所区别，fgets()读入换行符会将换行符作为字符串的一部分。<br>        scanf语句中没有精度修饰符。<br>        scanf语句输入数值时，读入结束的几种情况：<br>        1）遇到空白符<br>        2）达到域宽<br>        3）遇到非法输入<br>        scanf语句的返回值为读入的项数。未能成功读入返回0，调用函数失败或读到文件结束返回EOF(值为-1的宏)。<br>     4.小心&amp;&amp;与||的短路特性。<br>        eg：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> b=<span class="number">2</span>;</span><br><span class="line"><span class="keyword">if</span>(a&lt;<span class="number">0</span>&amp;&amp;b++&gt;<span class="number">2</span>)<span class="comment">//b++不会被执行</span></span><br><span class="line">a+=<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<p>   5.空指针不能解引用。<br>     6.函数的返回值可以是除了数组之外的任何类型。<br>     7.数组名是一个地址，不能改变。<br>        eg：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">3</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> *p=a;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,*(a+<span class="number">1</span>));<span class="comment">//合法</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,*(++a));<span class="comment">//不合法</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,*p);<span class="comment">//合法</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,*(++p));<span class="comment">//合法</span></span><br></pre></td></tr></table></figure>
+<p>   8.共用体不能进行比较操作，也不能作为函数参数。<br>   9.局部变量可以屏蔽全局变量(就近原则)。<br>   10.同一个外部变量名在两个不同的文件中被声明为不同的类型，会导致C程序失效。<br>     11.使用宏定义完成类似函数的功能时，要注意括号的使用。<br>         eg：<code>#define cube(a)   a*a*a//不好</code><br>         当函数中调用cube(a+b)时，计算的将是<code>(a+(b*a)+(b*a)+b)</code>的<br>         值。<br>         改进：<code>#define cube  ((a)*(a)*(a))</code></p>
+
                 
 
+
+<p class="pink-link-context">
+    <a href="/2020/06/06/%E6%A0%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" rel="next" title="栈的基本操作">
+    Next: 栈的基本操作
+  </a>
+</p>
 
 
             </div>
