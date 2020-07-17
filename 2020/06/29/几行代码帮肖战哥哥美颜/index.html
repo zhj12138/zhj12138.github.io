@@ -147,16 +147,16 @@
         
 
             <li class="collapse-level-1" collapse-level="1">
-                <a class="no-padding" href="/categories/notes/C/">
-                    C <span class="right">1</span></a>
+                <a class="no-padding" href="/categories/notes/markdown/">
+                    markdown <span class="right">2</span></a>
                 </a>
             </li>
 
         
 
             <li class="collapse-level-1" collapse-level="1">
-                <a class="no-padding" href="/categories/notes/markdown/">
-                    markdown <span class="right">2</span></a>
+                <a class="no-padding" href="/categories/notes/C/">
+                    C <span class="right">1</span></a>
                 </a>
             </li>
 
@@ -171,8 +171,8 @@
         
 
             <li class="collapse-level-0" collapse-level="0">
-                <a class="no-padding" href="/categories/app/">
-                    app <span class="right">1</span></a>
+                <a class="no-padding" href="/categories/Entertainment/">
+                    Entertainment <span class="right">1</span></a>
                 </a>
             </li>
 
@@ -195,8 +195,8 @@
         
 
             <li class="collapse-level-0" collapse-level="0">
-                <a class="no-padding" href="/categories/Entertainment/">
-                    Entertainment <span class="right">1</span></a>
+                <a class="no-padding" href="/categories/app/">
+                    app <span class="right">1</span></a>
                 </a>
             </li>
 
@@ -276,7 +276,7 @@
 
             <div class="entry pink-link-context">
                 <p>我爱死肖战哥哥了，但苦于网上一张一张下载他的照片实在是太慢了，于是我准备用刚学的python来直接在网上爬取一下哥哥的图片：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlretrieve</span><br><span class="line"></span><br><span class="line">link = <span class="string">"https://image.baidu.com/search/index?isource=infinity&amp;iname=baidu&amp;tn=baiduimage&amp;word="</span></span><br><span class="line">pictures = []</span><br><span class="line">urls = []</span><br><span class="line">pattern = re.compile(<span class="string">'"thumbURL":"(.+?.jpg)"'</span>)</span><br><span class="line">hd = &#123;<span class="string">"user-agent"</span>: <span class="string">"Mozilla/5.0"</span>&#125;</span><br><span class="line">path = <span class="string">r'F:\XZ'</span>  <span class="comment"># 存储路径</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getImg</span><span class="params">(urls)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">        obj = requests.get(url, headers=hd, timeout=<span class="number">1</span>)</span><br><span class="line">        pictures.extend(pattern.findall(obj.text))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">downloadpic</span><span class="params">(pictures)</span>:</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> picture <span class="keyword">in</span> pictures:</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            urlretrieve(picture, path + <span class="string">"/"</span> + <span class="string">"ugly %d"</span> % count + <span class="string">".jpg"</span>)</span><br><span class="line">        <span class="keyword">except</span> OSError <span class="keyword">as</span> ie:</span><br><span class="line">            print(<span class="string">"第%d张图片下载失败"</span> % count)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"第%d张图片已下载"</span> % count)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">keywords = [<span class="string">"肖战"</span>, <span class="string">"肖战1"</span>, <span class="string">"肖战2"</span>, <span class="string">"肖战3"</span>, <span class="string">"肖战4"</span>]</span><br><span class="line"><span class="keyword">for</span> keyword <span class="keyword">in</span> keywords:</span><br><span class="line">    urls.append(link + keyword)</span><br><span class="line">getImg(urls)</span><br><span class="line">print(pictures)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlretrieve</span><br><span class="line"></span><br><span class="line">link = <span class="string">"https://image.baidu.com/search/index?isource=infinity&amp;iname=baidu&amp;tn=baiduimage&amp;word="</span></span><br><span class="line">pictures = []</span><br><span class="line">urls = []</span><br><span class="line">pattern = re.compile(<span class="string">'"thumbURL":"(.+?.jpg)"'</span>)</span><br><span class="line">hd = &#123;<span class="string">"user-agent"</span>: <span class="string">"Mozilla/5.0"</span>&#125;</span><br><span class="line">path = <span class="string">r'F:\XZ'</span>  <span class="comment"># 存储路径</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getImg</span><span class="params">(urls)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">        obj = requests.get(url, headers=hd, timeout=<span class="number">1</span>)</span><br><span class="line">        pictures.extend(pattern.findall(obj.text))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">downloadpic</span><span class="params">(pictures)</span>:</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> picture <span class="keyword">in</span> pictures:</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            urlretrieve(picture, path + <span class="string">"/"</span> + <span class="string">"ugly %d"</span> % count + <span class="string">".jpg"</span>)</span><br><span class="line">        <span class="keyword">except</span> OSError <span class="keyword">as</span> ie:</span><br><span class="line">            print(<span class="string">"第%d张图片下载失败"</span> % count)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"第%d张图片已下载"</span> % count)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">keywords = [<span class="string">"肖战"</span>, <span class="string">"肖战1"</span>, <span class="string">"肖战2"</span>, <span class="string">"肖战3"</span>, <span class="string">"肖战4"</span>]</span><br><span class="line"><span class="keyword">for</span> keyword <span class="keyword">in</span> keywords:</span><br><span class="line">    urls.append(link + keyword)</span><br><span class="line">getImg(urls)</span><br><span class="line">downloadpic(pictures)</span><br></pre></td></tr></table></figure>
 
 <p>好，现在图片我们已经准备完毕，下一步我们就要开始对哥哥的图片进行美化：</p>
 <p>我们先拿其中一张图片来试一下效果：</p>
@@ -316,11 +316,17 @@
 <p><strong>Learn and progress together with me!</strong></p>
 
                 
+<p class="pink-link-context">
+    <a href="/2020/07/17/markdown%E8%BF%9B%E9%98%B6%E7%AF%87%E2%80%94%E2%80%94%E8%A1%A8%E6%83%85%E4%B8%8E%E6%B5%81%E7%A8%8B%E5%9B%BE/" rel="next" title="markdown进阶篇——表情与流程图">
+    Prev: markdown进阶篇——表情与流程图
+  </a>
+</p>
+
 
 
 <p class="pink-link-context">
-    <a href="/2020/06/27/%E6%A8%A1%E6%9D%BF/" rel="next" title="模板">
-    Next: 模板
+    <a href="/2020/06/27/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90%E7%AC%AC%E4%B8%80%E5%BC%B9%E2%80%94%E2%80%94everything/" rel="next" title="电脑软件推荐第一弹——everything">
+    Next: 电脑软件推荐第一弹——everything
   </a>
 </p>
 

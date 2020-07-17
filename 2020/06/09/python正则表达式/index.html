@@ -147,16 +147,16 @@
         
 
             <li class="collapse-level-1" collapse-level="1">
-                <a class="no-padding" href="/categories/notes/C/">
-                    C <span class="right">1</span></a>
+                <a class="no-padding" href="/categories/notes/markdown/">
+                    markdown <span class="right">2</span></a>
                 </a>
             </li>
 
         
 
             <li class="collapse-level-1" collapse-level="1">
-                <a class="no-padding" href="/categories/notes/markdown/">
-                    markdown <span class="right">2</span></a>
+                <a class="no-padding" href="/categories/notes/C/">
+                    C <span class="right">1</span></a>
                 </a>
             </li>
 
@@ -171,8 +171,8 @@
         
 
             <li class="collapse-level-0" collapse-level="0">
-                <a class="no-padding" href="/categories/app/">
-                    app <span class="right">1</span></a>
+                <a class="no-padding" href="/categories/Entertainment/">
+                    Entertainment <span class="right">1</span></a>
                 </a>
             </li>
 
@@ -195,8 +195,8 @@
         
 
             <li class="collapse-level-0" collapse-level="0">
-                <a class="no-padding" href="/categories/Entertainment/">
-                    Entertainment <span class="right">1</span></a>
+                <a class="no-padding" href="/categories/app/">
+                    app <span class="right">1</span></a>
                 </a>
             </li>
 
@@ -288,12 +288,14 @@
 <ul>
 <li>pattern：正则表达式字符串</li>
 <li>string：目标字符串</li>
-<li>flags：<pre><code>* re.I     使匹配对大小写不敏感
-        * re.M   多行匹配
-        * re.S     拓展&quot;.&quot;的匹配，使其也能匹配换行符
-        * re.U     根据Unicode解析字符
-        * re.X      
-        * re.L      本地化识别匹配</code></pre></li>
+<li>flags：<pre><code>* re.I     使匹配对大小写不敏感</code></pre><ul>
+<li>re.M   多行匹配</li>
+<li>re.S     拓展”.”的匹配，使其也能匹配换行符</li>
+<li>re.U     根据Unicode解析字符</li>
+<li>re.X   </li>
+<li>re.L      本地化识别匹配</li>
+</ul>
+</li>
 </ul>
 <p>示例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(re.match(<span class="string">r'sn'</span>, <span class="string">'snow'</span>))</span><br><span class="line">print(re.match(<span class="string">r'sn'</span>, <span class="string">'snow'</span>).span())</span><br><span class="line">print(re.match(<span class="string">r'ow'</span>, <span class="string">'snow'</span>))  <span class="comment"># 倘若无匹配，则不能使用span方法，否则会报错</span></span><br></pre></td></tr></table></figure>
@@ -356,7 +358,7 @@
 <p>tips: 别忘了正则表达式里的括号</p>
 <h3 id="compile函数"><a href="#compile函数" class="headerlink" title="compile函数"></a>compile函数</h3><p>编译正则表达式，生成一个正则表达式对象</p>
 <p>用法：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.compile(pattern, flags)</span><br><span class="line">pattern.match(string, start, end)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pattern = re.compile(pattern, flags)</span><br><span class="line">pattern.match(string, start, end)</span><br></pre></td></tr></table></figure>
 
 <p>示例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pattern = re.compile(<span class="string">r'\d+'</span>)</span><br><span class="line">matched1 = pattern.match(<span class="string">'123ABCD456ADBC789'</span>)</span><br><span class="line">matched2 = pattern.match(<span class="string">'123ABCD456ADBC789'</span>, <span class="number">3</span>, <span class="number">10</span>)</span><br><span class="line">matched3 = pattern.match(<span class="string">'123ABCD456ADBC789'</span>, <span class="number">7</span>, <span class="number">9</span>)</span><br><span class="line">print(matched1)</span><br><span class="line">print(matched2)</span><br><span class="line">print(matched3)</span><br></pre></td></tr></table></figure>
@@ -411,6 +413,8 @@
 
 <p>输出：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[&#39;runoob&#39;, &#39;runoob&#39;, &#39;runoob&#39;, &#39;&#39;]</span><br><span class="line">[&#39;&#39;, &#39; &#39;, &#39;runoob&#39;, &#39;, &#39;, &#39;runoob&#39;, &#39;, &#39;, &#39;runoob&#39;, &#39;.&#39;, &#39;&#39;]</span><br><span class="line">[&#39;&#39;, &#39;runoob, runoob, runoob.&#39;]</span><br><span class="line">[&#39;hello world&#39;]</span><br></pre></td></tr></table></figure>
+
+
 
 
 
